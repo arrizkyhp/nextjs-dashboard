@@ -7,6 +7,11 @@ export const formatCurrency = (amount: number) => {
   });
 };
 
+export function timeout(ms: number) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
 export const formatDateToLocal = (
   dateStr: string,
   locale: string = 'en-US',

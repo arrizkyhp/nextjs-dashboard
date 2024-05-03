@@ -3,9 +3,11 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import { lusitana } from '@/app/ui/fonts';
 import { fetchLatestInvoices } from '@/app/lib/data';
+import {timeout} from "@/app/lib/utils";
 export default async function LatestInvoices() {
   const latestInvoices = await fetchLatestInvoices();
 
+    await timeout(5000);
   return (
     <div className="flex w-full flex-col md:col-span-4">
       <h2 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
